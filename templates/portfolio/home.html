@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fazila's Portfolio</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Welcome to My Portfolio</h1>
+    <div class="projects">
+        {% for project in projects %}
+            <div class="project">
+                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                <h2>{{ project.title }}</h2>
+                <p>{{ project.description }}</p>
+                {% if project.github_link %}
+                    <a href="{{ project.github_link }}" target="_blank">View on GitHub</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
